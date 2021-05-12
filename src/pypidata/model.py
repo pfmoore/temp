@@ -1,4 +1,3 @@
-from sqlalchemy.orm import declarative_base, Session
 from sqlalchemy import MetaData, Table, Column, String, Integer, LargeBinary, DateTime
 import zlib
 
