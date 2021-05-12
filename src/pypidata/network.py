@@ -53,6 +53,9 @@ def get_url(
     while True:
         try:
             response = fetcher(method, url)
+            # 404 (NOT FOUND) is OK, and means no data
+            if response.status_code == 404:
+                return None
             response.raise_for_status()
             # Treat any status other than 200 (OK) as an error
             if response.status_code != 200:
