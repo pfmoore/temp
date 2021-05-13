@@ -1,5 +1,4 @@
 from sqlalchemy import MetaData, Table, Column, String, Integer, LargeBinary, DateTime
-import zlib
 
 
 class PyPIDB:
@@ -33,6 +32,7 @@ class PyPIDB:
 
 if __name__ == "__main__":
     from sqlalchemy import create_engine
+    import zlib
     engine = create_engine('sqlite:///foo.db', echo=True)
     db = PyPIDB()
     db.create_all(engine)
