@@ -40,7 +40,7 @@ def get_project(name: str, client: httpx.Client):
     if json_serial != simple_serial:
         print("Mismatch")
         return None
-    return name, json_serial, simple_data, json_data
+    return json_serial, simple_data, json_data
 
 def get_packages():
     # Get the data from XMLRPC
